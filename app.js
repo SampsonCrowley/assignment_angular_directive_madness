@@ -1,1 +1,1 @@
-var directiveMadness = angular.module("directiveMadness", [])
+var directiveMadness = angular.module("directiveMadness", []);

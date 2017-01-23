@@ -1,0 +1,17 @@
+<table class="table" ng-if="quotes.length">
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Author</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="quote in quotes">
+      <td>{{ quote.message }}</td>
+      <td>{{ quote.author }}</td>
+      <td><a ng-click="deleteQuote(quote)">delete</a></td>
+    </tr>
+  </tbody>
+</table>
+<div ng-if="!quotes.length">There are no quotes yet.</div>

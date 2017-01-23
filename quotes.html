@@ -16,17 +16,25 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-controller="QuotesCtrl">
     <main-nav></main-nav>
     <main-header>
-      Index
+      Quotes
     </main-header>
+
+    <quote-form></quote-form>
+    <quotes-index></quotes-index>
 
     <script src="app.js" charset="utf-8"></script>
 
     <!-- directives -->
     <script src="directives/main-nav.js" charset="utf-8"></script>
     <script src="directives/main-header.js" charset="utf-8"></script>
+    <script src="directives/quote-form.js" charset="utf-8"></script>
+    <script src="directives/quotes-index.js" charset="utf-8"></script>
+
+    <!-- controllers -->
+    <script src="controllers/quotes-controller.js" charset="utf-8"></script>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
