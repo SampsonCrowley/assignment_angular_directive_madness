@@ -6,7 +6,7 @@ directiveMadness.directive("isolated", [
       scope.twoWay = "altered two way variable";
       var isolateSayHello = scope.sayHello;
       scope.sayHello = function(name) {
-        isolateSayHello(name + " from isolated scope.");
+        isolateSayHello({name: name + " from isolated scope."});
       };
     };
 
