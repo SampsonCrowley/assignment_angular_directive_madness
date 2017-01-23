@@ -1,3 +1,14 @@
-<input type="text" ng-model="quote.message" value="">
-<input type="text" ng-model="quote.author" value="">
-<button type="button" name="button" ng-click="addQuote(quote)">Add Quote</button>
+<form name="newQuote" ng-submit="addQuote(newQuote.$valid, newQuote, quote)">
+  <span colorize color="{{ 'red' }}" ng-show="newQuote.message.$invalid && newQuote.message.$touched">Must be at least 2 characters.</span>
+  <br>
+  <label>Message
+    <input type="text" name="message" ng-model="quote.message" required ng-minlength="2">
+  </label>
+  <br>
+  <span colorize color="{{ 'red' }}" ng-show="newQuote.author.$invalid && newQuote.author.$touched">Must be between 2 and 32 characters.</span>
+  <br>
+  <label>Author
+    <input type="text" name="author" ng-model="quote.author" required ng-minlength="2"  ng-maxlength="32">
+  </label>
+  <button type="submit" name="button">Add Quote</button>
+</form>

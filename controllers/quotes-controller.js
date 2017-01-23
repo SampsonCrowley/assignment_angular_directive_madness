@@ -2,16 +2,21 @@ directiveMadness.controller('QuotesCtrl', [
   '$scope', function($scope) {
     $scope.quotes = [];
 
-    $scope.addQuote = function(quote) {
-      var newQuote = {
-        author: quote.author,
-        message: quote.message
-      };
+    $scope.addQuote = function(isValid, form, quote) {
+      if (isValid) {
+        var newQuote = {
+          author: quote.author,
+          message: quote.message
+        };
 
-      $scope.quotes.push(newQuote);
+        $scope.quotes.push(newQuote);
 
-      quote.author = undefined;
-      quote.message = undefined;
+        quote.author = undefined;
+        quote.message = undefined;
+
+        form.$setPristine();
+        form.$setUntouched();
+      }
     };
 
     $scope.deleteQuote = function(quote) {

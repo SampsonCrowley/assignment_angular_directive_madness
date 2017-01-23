@@ -3,7 +3,7 @@ directiveMadness.directive("colorize", [
     function setColor(s, e, a){
       e.css({
         color: s.color,
-        background: s.background
+        background: s.background || 'initial'
       });
     }
 
