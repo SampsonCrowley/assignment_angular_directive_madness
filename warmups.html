@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="directiveMadness">
+<html lang="en" ng-app="directiveMadness" ng-mousedown="mouseButtonState='DOWN'" ng-mouseup="mouseButtonState='UP'" ng-model="mouseButtonState">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,8 +46,11 @@
 
     <p colorize color="{{ '#FFF' }}" background="{{ '#000' }}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <copyright>Company</copyright>
+    <p>Mouse button is: {{ mouseButtonState }}</p>
+    <p ng-model="mouseHoverState" ng-mouseover="mouseHoverState = 'OVER'" ng-mouseleave="mouseHoverState = 'LEAVE'">Hover state: {{ mouseHoverState || "LEAVE" }}</p>
+    <p ng-model="mouseClickState" ng-dblclick="mouseClickState = 'double'">I'm {{ mouseClickState + ' ' }}clickable</p>
 
+    <copyright>Company</copyright>
 
     <script src="app.js" charset="utf-8"></script>
 
